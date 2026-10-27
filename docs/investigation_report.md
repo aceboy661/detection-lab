@@ -1,4 +1,4 @@
-# Investigation Report - Failed Login & Suspicious Process Activity
+# Investigation Report - Host-Based Detection Lab
 
 **Date:** October 27, 2026  
 **Analyst:** Marlon Lonmon  
@@ -7,7 +7,7 @@
 ---
 
 ## Summary
-Two detection scripts were executed against sample host logs. Both triggered alerts indicating potentially malicious activity.
+Three custom detection scripts were executed against sample host logs. Multiple alerts were triggered, indicating potentially malicious activity.
 
 ---
 
@@ -16,8 +16,7 @@ Two detection scripts were executed against sample host logs. Both triggered ale
 **Detection Script:** failed_login_detector.py  
 **Log Source:** sample_auth.log
 
-**Details:**
-- 6 failed login attempts detected in a short time window
+- 6 failed login attempts detected
 - Targeted accounts: admin, root, test
 - Source IP: 192.168.1.50
 
@@ -31,17 +30,26 @@ Two detection scripts were executed against sample host logs. Both triggered ale
 **Detection Script:** suspicious_process_detector.py  
 **Log Source:** sample_process.log
 
-**Details:**
-- Processes were launched from unusual locations:
-  - /tmp/
-  - /dev/shm/
-  - /var/tmp/
-- These locations are commonly used by malware and attackers
+- Processes launched from unusual locations (/tmp/, /dev/shm/, /var/tmp/)
+- These locations are commonly abused by malware
 
 **Severity:** High  
-**Recommendation:** Investigate the affected host, terminate suspicious processes, and check for persistence mechanisms.
+**Recommendation:** Investigate the host, terminate suspicious processes, and check for persistence.
+
+---
+
+## Finding 3: Privilege Escalation Activity
+
+**Detection Script:** privilege_escalation_detector.py  
+**Log Source:** sample_privilege.log
+
+- Multiple sudo, su, useradd, and usermod events detected
+- Includes a failed su attempt and creation of a new user
+
+**Severity:** High  
+**Recommendation:** Verify if these actions were authorized. Review privileged account activity.
 
 ---
 
 ## Conclusion
-The detection scripts successfully identified suspicious activity. This demonstrates basic detection engineering and log analysis skills relevant to a SOC Tier 1 role.
+The detection scripts successfully identified suspicious activity across authentication, process execution, and privilege escalation. This project demonstrates practical detection engineering and log analysis skills relevant to a SOC Tier 1 role.
