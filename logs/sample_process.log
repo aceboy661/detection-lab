@@ -1,0 +1,6 @@
+Oct 27 10:15:22 server kernel: Process started: /usr/bin/python3 by user john
+Oct 27 10:16:01 server kernel: Process started: /tmp/update.bin by user root
+Oct 27 10:17:44 server kernel: Process started: /usr/sbin/sshd by user root
+Oct 27 10:18:12 server kernel: Process started: /dev/shm/miner by user www-data
+Oct 27 10:19:33 server kernel: Process started: /var/tmp/backdoor.sh by user root
+Oct 27 10:20:05 server kernel: Process started: /
