@@ -1,39 +1,31 @@
 # Host-Based Detection Lab
 
-A hands-on cybersecurity project focused on log analysis, detection engineering, and basic threat detection.
+A hands-on cybersecurity project focused on log analysis and custom detection rules.
 
 This project demonstrates practical skills relevant to SOC Analyst, Junior Cybersecurity Analyst, and IT Security roles.
 
-## Project Overview
-
-This lab simulates host-based detection by analyzing authentication logs and identifying suspicious activity such as brute-force attempts.
-
-### Skills Demonstrated
+## Skills Demonstrated
 - Log analysis
-- Writing custom detection logic
+- Custom detection logic
 - Python scripting for security
-- Documentation and investigation notes
-- Version control with Git & GitHub
-
-## Project Structure
-
-- logs/ → Sample log files
-- scripts/ → Detection scripts
-- detections/ → Detection rules and notes
-- docs/ → Investigation reports
-- README.md
+- Documentation & investigation reporting
+- Git & GitHub
 
 ## Current Detections
 
-### 1. Failed Login Detector
-- File: scripts/failed_login_detector.py
-- Description: Analyzes authentication logs for failed login attempts.
-- Alert Condition: 5 or more failed logins triggers an alert for possible brute-force activity.
+1. **Failed Login Detector** – Detects possible brute-force attacks
+2. **Suspicious Process Detector** – Finds processes running from unusual locations
+3. **Privilege Escalation Detector** – Identifies potential privilege escalation activity
 
 ## How to Run
 
+```bash
 python3 scripts/failed_login_detector.py
+python3 scripts/suspicious_process_detector.py
+python3 scripts/privilege_escalation_detector.py
 
-## Author
-Marlon Lonmon  
-GitHub: aceboy661
+AUTHOR
+
+Marlon Lonmon 
+
+GitHub:aceboy661
