@@ -1,0 +1,6 @@
+Oct 27 14:02:11 server sudo: john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/bin/bash
+Oct 27 14:05:33 server useradd: new user: name=hacker, UID=1005, GID=1005, home=/home/hacker
+Oct 27 14:08:17 server sudo: admin : TTY=pts/1 ; PWD=/var/www ; USER=root ; COMMAND=/usr/bin/passwd
+Oct 27 14:12:45 server su: FAILED su for root by testuser
+Oct 27 14:15:02 server usermod: change user 'john' password
+Oct 27 14:18:29 server sshd: Accepted password for john from 192.168.1.10 port 45001
